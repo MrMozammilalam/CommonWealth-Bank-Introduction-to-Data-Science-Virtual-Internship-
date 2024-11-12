@@ -1,0 +1,137 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\froman\fcharset0 Times-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Tables\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b \cf0 1.Tweets
+\f0\b0 \
+
+\f1\b 2.Users
+\f0\b0 \
+
+\f1\b 3.Replies
+\f0\b0 \
+
+\f1\b 4.QuoteRetweets
+\f0\b0 \
+
+\f1\b 5.Mentions
+\f0\b0 \
+\'a0\
+Fields in each table\
+
+\f1\b Tweets
+\f0\b0 \
+\'95
+\f1\b tweet_id
+\f0\b0 (Primary Key): The unique identifier of the tweet.\
+\'95
+\f1\b user_id
+\f0\b0 : The unique identifier of the user who posted the tweet.\
+\'95
+\f1\b tweet_text
+\f0\b0 : The text content of the tweet.\
+\'95
+\f1\b created_at
+\f0\b0 : The timestamp when the tweet was created.\
+\'a0\
+
+\f1\b Users
+\f0\b0 \
+\'95
+\f1\b user_id
+\f0\b0 (Primary Key): The unique identifier of the user.\
+\'95
+\f1\b user_name
+\f0\b0 : The name of the user.\
+\'95
+\f1\b user_screen_name
+\f0\b0 : The screen name (handle) of the user.\
+\'95
+\f1\b user_created_at
+\f0\b0 : The timestamp when the user account was created\uc0\u8232 \u8232 
+\f1\b Replies
+\f0\b0 \
+\'95
+\f1\b reply_id
+\f0\b0 (Primary Key): The unique identifier of the reply.\
+\'95
+\f1\b tweet_id
+\f0\b0 : The unique identifier of the tweet that the reply is associated with.\
+\'95
+\f1\b user_id
+\f0\b0 : The unique identifier of the user who posted the reply.\
+\'95
+\f1\b reply_text
+\f0\b0 : The text content of the reply.\
+\'95
+\f1\b created_at
+\f0\b0 : The timestamp when the reply was created.\
+\'a0\
+
+\f1\b QuoteRetweets
+\f0\b0 \
+\'95
+\f1\b quote_id
+\f0\b0 (Primary Key): The unique identifier of the quote retweet.\
+\'95
+\f1\b tweet_id
+\f0\b0 : The unique identifier of the original tweet that was quote retweeted.\
+\'95
+\f1\b user_id
+\f0\b0 : The unique identifier of the user who posted the quote retweet.\
+\'95
+\f1\b quote_text
+\f0\b0 : The text content of the quote retweet.\
+\'95
+\f1\b created_at
+\f0\b0 : The timestamp when the quote retweet was created.\
+\'a0\
+
+\f1\b Mentions
+\f0\b0 \
+\'95
+\f1\b mention_id
+\f0\b0 (Primary Key): The unique identifier of the mention.\
+\'95
+\f1\b tweet_id
+\f0\b0 : The unique identifier of the tweet where the mention occurred.\
+\'95
+\f1\b user_id
+\f0\b0 : The unique identifier of the user who was mentioned.\uc0\u8232 \u8232 Relationships between tables\
+\'95
+\f1\b Tweets
+\f0\b0 to
+\f1\b Users
+\f0\b0 : Each tweet is associated with one user (viauser_id). A user can have multiple tweets.\
+\'a0\
+\'95
+\f1\b Replies
+\f0\b0 to
+\f1\b Tweets
+\f0\b0 and
+\f1\b Users
+\f0\b0 : Each reply is associated with one tweet (viatweet_id) and one user (viauser_id). A tweet can have multiple replies, and a user can post multiple replies.\
+\'a0\
+\'95
+\f1\b QuoteRetweets
+\f0\b0 to
+\f1\b Tweets
+\f0\b0 and
+\f1\b Users
+\f0\b0 : Each quote retweet is associated with one original tweet (viatweet_id) and one user (viauser_id). A tweet can be quote retweeted multiple times, and a user can post multiple quote retweets.\
+\'95
+\f1\b Mentions
+\f0\b0 to
+\f1\b Tweets
+\f0\b0 and
+\f1\b Users
+\f0\b0 : Each mention is associated with one tweet (viatweet_id) and one user (viauser_id). A tweet can have multiple mentions, and a user can be mentioned multiple times.\
+}
